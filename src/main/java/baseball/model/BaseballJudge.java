@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseballJudge {
-    private final List<Integer> answer;
-    public BaseballJudge () {
+    private List<Integer> answer;
+    public void setupAnser () {
         List<Integer> computer = new ArrayList<>();
         while (computer.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
@@ -17,6 +17,7 @@ public class BaseballJudge {
         }
         this.answer = computer;
     }
+
     public judgeNumberResult judgeNumber(List<Integer> Numbers) {
         int ball = 0;
         int strike = 0;
