@@ -19,8 +19,8 @@ public class ConsoleView {
         return Console.readLine();
     }
     public void printResult(int ball, int strike) {
-        String strikeString = String.format("%s%d", STRIKE_STRING, strike);
-        String ballString = String.format("%s%d", BALL_STRING, ball);
+        String strikeString = String.format("%d%s", strike, STRIKE_STRING);
+        String ballString = String.format("%d%s", ball, BALL_STRING);
 
         if (ball > 0 && strike > 0) {
             System.out.printf("%s %s\n", ballString, strikeString);
