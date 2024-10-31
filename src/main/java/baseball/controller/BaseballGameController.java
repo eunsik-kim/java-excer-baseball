@@ -1,7 +1,7 @@
 package baseball.controller;
 
-import baseball.model.BaseballJudge;
-import baseball.model.BaseballService;
+import baseball.model.service.BaseballJudge;
+import baseball.model.service.BaseballService;
 import baseball.view.ConsoleView;
 
 import java.util.Objects;
