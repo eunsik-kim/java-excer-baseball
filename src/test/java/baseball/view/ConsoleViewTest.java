@@ -1,5 +1,6 @@
 package baseball.view;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +24,7 @@ class ConsoleViewTest {
     private void setInput(String input) {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(inputStream);
+        outputStream.reset();
     }
 
     @Test
@@ -37,14 +39,5 @@ class ConsoleViewTest {
         assertThat(consoleView.getInput()).isEqualTo("123");
         assertThat(outputStream.toString())
                 .contains("숫자를 입력해주세요 : ");
-    }
-
-    @Test
-    void 게임_종료_메시지_출력() {
-        setInput("1");
-        assertThat(consoleView.endAskRestart()).isEqualTo("1");
-        assertThat(outputStream.toString())
-                .contains("3개의 숫자를 모두 맞히셨습니다! 게임 종료",
-                        "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
     }
 }

@@ -1,4 +1,5 @@
-import baseball.model.BaseballJudge;
+package baseball.model;
+
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,6 +13,7 @@ class BaseballJudgeTest {
         // Randoms.pickNumberInRange() 결과를 1,2,3으로 설정
         assertRandomNumberInRangeTest(() -> {
             baseballJudge = new BaseballJudge();
+            baseballJudge.setupAnser();
             BaseballJudge.judgeNumberResult result =
                     baseballJudge.judgeNumber(Arrays.asList(1, 2, 3));
 
@@ -24,6 +26,7 @@ class BaseballJudgeTest {
     void 볼_테스트() {
         assertRandomNumberInRangeTest(() -> {
             baseballJudge = new BaseballJudge();
+            baseballJudge.setupAnser();
             BaseballJudge.judgeNumberResult result =
                     baseballJudge.judgeNumber(Arrays.asList(3, 1, 2));
 
@@ -36,6 +39,7 @@ class BaseballJudgeTest {
     void 볼_스트라이크_혼합_테스트() {
         assertRandomNumberInRangeTest(() -> {
             baseballJudge = new BaseballJudge();
+            baseballJudge.setupAnser();
             BaseballJudge.judgeNumberResult result =
                     baseballJudge.judgeNumber(Arrays.asList(1, 3, 2));
 
