@@ -1,5 +1,7 @@
 package baseball.model.service;
 
+import baseball.exception.NotNumberException;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public class BaseballParser {
                     .map(Integer::parseInt)
                     .toList();
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("입력한 숫자들이 정수가 아닙니다. 입력 : " +  inputStr);
+            throw new NotNumberException(inputStr);
         }
     }
 }
